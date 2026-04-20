@@ -1,0 +1,21 @@
+<svg width="760" height="560" viewBox="0 0 760 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="560" rx="40" fill="#E8ECE6"/>
+  <circle cx="254" cy="188" r="108" fill="url(#d1)"/>
+  <circle cx="254" cy="188" r="72" fill="#E8ECE6"/>
+  <path d="M254 92L276 150H338L288 186L308 246L254 210L200 246L220 186L170 150H232L254 92Z" fill="url(#d2)"/>
+  <rect x="408" y="118" width="154" height="240" rx="32" fill="url(#d3)"/>
+  <defs>
+    <radialGradient id="d1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(254 188) rotate(90) scale(108)">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D8DCD6"/>
+    </radialGradient>
+    <radialGradient id="d2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(254 169) rotate(90) scale(77)">
+      <stop stop-color="#C7FF43"/>
+      <stop offset="1" stop-color="#9ED61E"/>
+    </radialGradient>
+    <linearGradient id="d3" x1="485" y1="118" x2="485" y2="358" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#202020"/>
+      <stop offset="1" stop-color="#3A3A3A"/>
+    </linearGradient>
+  </defs>
+</svg>
