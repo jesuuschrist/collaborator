@@ -2,6 +2,7 @@ const topbar = document.querySelector(".topbar");
 const menuToggle = document.querySelector(".menu-toggle");
 const menuLinks = document.querySelectorAll(".menu a");
 const faqItems = document.querySelectorAll(".faq-item");
+const serviceCards = document.querySelectorAll(".service-card");
 const reviewsGrid = document.querySelector(".reviews-grid");
 const reviewCards = document.querySelectorAll(".review-card");
 const reviewDots = document.querySelectorAll(".reviews-dot");
@@ -55,6 +56,45 @@ faqItems.forEach((item) => {
     if (!isActive) {
       item.classList.add("active");
     }
+  });
+});
+
+serviceCards.forEach((card) => {
+  card.setAttribute("tabindex", "0");
+
+  const toggleCard = () => {
+    const isOpen = card.classList.contains("is-open");
+
+    serviceCards.forEach((serviceCard) => {
+      serviceCard.classList.remove("is-open");
+      serviceCard.setAttribute("aria-expanded", "false");
+    });
+
+    if (!isOpen) {
+      card.classList.add("is-open");
+      card.setAttribute("aria-expanded", "true");
+    }
+  };
+
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-expanded", "false");
+
+  card.addEventListener("click", (event) => {
+    const interactiveElement = event.target.closest("a, button, input, textarea");
+    if (interactiveElement) {
+      return;
+    }
+
+    toggleCard();
+  });
+
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    event.preventDefault();
+    toggleCard();
   });
 });
 
