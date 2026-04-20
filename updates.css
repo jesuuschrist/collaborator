@@ -1,0 +1,405 @@
+:root {
+  --header-offset: 112px;
+}
+
+h1,
+h2 {
+  font-family: "Unbounded", sans-serif;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.page-intro,
+.details-section,
+.legal-hero,
+.legal-accordion {
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 245, 242, 0.82));
+  box-shadow: 0 24px 60px rgba(18, 18, 18, 0.08);
+  border-radius: 36px;
+}
+
+.page-intro,
+.details-section {
+  padding: 34px;
+  overflow: hidden;
+}
+
+.legal-page {
+  display: grid;
+  gap: 18px;
+}
+
+.legal-hero {
+  padding: 36px 34px 30px;
+}
+
+.legal-hero-copy {
+  display: grid;
+  gap: 18px;
+  max-width: 980px;
+}
+
+.legal-hero-copy h1 {
+  max-width: none;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+.legal-lead {
+  max-width: 72ch;
+  color: #121212;
+  font-size: 0.98rem;
+  font-weight: 800;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.legal-intro {
+  display: grid;
+  gap: 12px;
+  max-width: 86ch;
+}
+
+.legal-intro p {
+  color: #606060;
+  line-height: 1.68;
+  font-size: 0.98rem;
+}
+
+.legal-accordion {
+  padding: 18px;
+}
+
+.legal-item {
+  border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+}
+
+.legal-item:last-child {
+  border-bottom: 0;
+}
+
+.legal-item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 22px 10px;
+  border: 0;
+  background: transparent;
+  color: #121212;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.legal-item button span:first-child {
+  color: #121212;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.legal-item .faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.legal-item .faq-answer p {
+  overflow: hidden;
+  padding: 0 10px 0;
+  color: #606060;
+  font-size: 0.96rem;
+  line-height: 1.68;
+}
+
+.legal-item.active .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.legal-item.active .faq-answer p {
+  padding-bottom: 22px;
+}
+
+.details-heading-wide h1 {
+  max-width: none;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+.details-text-block {
+  border: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 244, 241, 0.96));
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 40px rgba(18, 18, 18, 0.06);
+  border-radius: 30px;
+  padding: 30px 32px;
+  display: grid;
+  gap: 14px;
+}
+
+.details-text-block-reference {
+  position: relative;
+  margin-top: 22px;
+  background:
+    radial-gradient(circle at 24% 24%, rgba(255, 255, 255, 0.95), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 245, 242, 0.94));
+  border: 0;
+  box-shadow: 0 22px 52px rgba(18, 18, 18, 0.08);
+  overflow: hidden;
+}
+
+.details-columns {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 44px 54px;
+}
+
+.details-column {
+  display: grid;
+  align-content: start;
+  gap: 38px;
+}
+
+.details-row {
+  display: grid;
+  gap: 10px;
+}
+
+.details-row h3 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.details-row p {
+  margin: 0;
+  max-width: 24ch;
+  color: rgba(18, 18, 18, 0.82);
+  font-size: clamp(1rem, 1.35vw, 1.08rem);
+  line-height: 1.45;
+}
+
+.hero-offer-card {
+  width: min(100%, 420px);
+  min-height: 420px;
+  padding: 36px 30px;
+  border-radius: 32px;
+  border: 1px solid rgba(18, 18, 18, 0.08);
+  background:
+    radial-gradient(circle at 78% 22%, rgba(184, 239, 53, 0.16), transparent 20%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.82), transparent 18%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(244, 244, 241, 0.94));
+  box-shadow: 0 22px 48px rgba(18, 18, 18, 0.08), 0 0 34px rgba(184, 239, 53, 0.08);
+  display: grid;
+  align-content: center;
+  gap: 20px;
+}
+
+.hero-offer-label {
+  color: #6a6a6a;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.hero-offer-value {
+  max-width: none;
+  color: #121212;
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(1.9rem, 3.8vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.hero-offer-text {
+  max-width: 24ch;
+  color: #3c3c3c;
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.hero-offer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-offer-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(184, 239, 53, 0.14), rgba(184, 239, 53, 0.08));
+  color: #121212;
+  font-size: 0.88rem;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px rgba(184, 239, 53, 0.12);
+}
+
+.contact-heading {
+  max-width: 980px;
+}
+
+.contact-heading h2 {
+  max-width: none;
+  text-wrap: balance;
+}
+
+.contact-heading .contact-dot {
+  display: inline-block;
+  color: #b8ef35;
+  text-shadow: 0 0 16px rgba(184, 239, 53, 0.35);
+  border-radius: 50%;
+}
+
+.hero-copy h1::after,
+.section-heading h2::after,
+.section-heading-compact h2::after,
+.legal-hero-copy h1::after {
+  content: ".";
+  display: inline-block;
+  color: #b8ef35;
+  text-shadow: 0 0 16px rgba(184, 239, 53, 0.35);
+  border-radius: 50%;
+}
+
+.form-note a {
+  color: #121212;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.footer-title h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0.16em;
+  left: calc(100% + 0.14em);
+  width: 0.18em;
+  height: 0.18em;
+  border-radius: 999px;
+  background: #b8ef35;
+  box-shadow: 0 0 16px rgba(184, 239, 53, 0.35);
+}
+
+@media (max-width: 980px) {
+  .details-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .details-column {
+    gap: 26px;
+  }
+
+  .legal-hero {
+    padding: 28px;
+  }
+
+  .hero-offer-card {
+    width: 100%;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .details-section,
+  .legal-hero {
+    padding: 24px 18px;
+    border-radius: 28px;
+  }
+
+  .legal-accordion {
+    padding: 14px 18px;
+    border-radius: 28px;
+  }
+
+  .legal-hero-copy h1 {
+    font-size: clamp(2rem, 10vw, 3.2rem);
+    line-height: 0.96;
+  }
+
+  .legal-lead {
+    font-size: 0.84rem;
+  }
+
+  .legal-item button {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .legal-item .faq-answer p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-offer-card {
+    max-width: none;
+    min-height: 0;
+    padding: 24px 20px;
+    border-radius: 24px;
+    gap: 16px;
+  }
+
+  .hero-offer-value {
+    font-size: clamp(1.6rem, 8vw, 2.1rem);
+  }
+
+  .hero-offer-text,
+  .details-row p {
+    max-width: none;
+    font-size: 0.96rem;
+  }
+
+  .details-heading-wide h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 0.98;
+  }
+
+  .details-text-block {
+    min-height: auto;
+    padding: 20px 18px;
+  }
+
+  .details-text-block-reference {
+    margin-top: 18px;
+  }
+
+  .details-row h3 {
+    font-size: 1.18rem;
+  }
+
+  .footer-title h2::after {
+    width: 0.17em;
+    height: 0.17em;
+  }
+}
+
+@media (max-width: 420px) {
+  .details-section,
+  .legal-hero {
+    padding: 20px 14px;
+  }
+
+  .legal-accordion {
+    padding: 12px 14px;
+  }
+
+  .hero-offer-card {
+    padding: 20px 16px;
+  }
+}
