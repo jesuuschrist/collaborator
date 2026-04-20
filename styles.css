@@ -65,6 +65,10 @@ body::before {
   padding: 12px 0 72px;
 }
 
+body.menu-active {
+  overflow: hidden;
+}
+
 .topbar {
   position: sticky;
   top: 10px;
@@ -81,6 +85,23 @@ body::before {
   backdrop-filter: blur(14px);
   box-shadow: 0 14px 34px rgba(25, 20, 17, 0.06);
   transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 39;
+  background:
+    linear-gradient(180deg, rgba(8, 8, 8, 0.18), rgba(8, 8, 8, 0.56)),
+    radial-gradient(circle at top center, rgba(184, 239, 53, 0.08), transparent 26%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+.topbar.menu-open + .menu-backdrop {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .topbar.scrolled {
@@ -461,7 +482,7 @@ h2 {
 }
 
 .promo-track span::after {
-  content: "вЂў";
+  content: "•";
   color: var(--accent);
 }
 
@@ -1212,6 +1233,15 @@ h2 {
     display: flex;
   }
 
+  .menu a {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 0 6px;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
   .hero,
   .audience,
   .contact {
@@ -1321,6 +1351,10 @@ h2 {
     gap: 12px;
   }
 
+  .menu-backdrop {
+    backdrop-filter: blur(6px);
+  }
+
   .brand-text small,
   .menu a {
     font-size: 0.88rem;
@@ -1344,6 +1378,25 @@ h2 {
 
   .brand-text small {
     font-size: 0.68rem;
+  }
+
+  .menu {
+    top: calc(100% + 12px);
+    padding: 18px;
+    border-radius: 24px;
+    gap: 6px;
+  }
+
+  .menu a {
+    min-height: 60px;
+    padding: 0 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+  }
+
+  .menu a:last-child {
+    border-bottom: 0;
   }
 
   h1 {
@@ -1669,7 +1722,9 @@ h2 {
   }
 
   .menu a {
-    font-size: 0.84rem;
+    min-height: 54px;
+    padding: 0 8px;
+    font-size: 0.95rem;
   }
 
   .hero,
