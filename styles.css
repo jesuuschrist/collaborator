@@ -324,7 +324,7 @@ h2 {
 .hero-text,
 .section-heading p:not(.eyebrow),
 .info-card p,
-timeline-item p,
+.timeline-item p,
 .audience-copy p:last-child,
 .faq-answer p,
 .contact-copy p,
@@ -461,7 +461,7 @@ timeline-item p,
 }
 
 .promo-track span::after {
-  content: "•";
+  content: "вЂў";
   color: var(--accent);
 }
 
@@ -478,10 +478,12 @@ timeline-item p,
   border-radius: 34px;
   overflow: hidden;
   background: linear-gradient(180deg, #f2f3ef 0%, #e8ebe5 100%);
+  cursor: pointer;
   transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.75s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.service-card:hover {
+.service-card:hover,
+.service-card.is-open {
   transform: translateY(-4px);
   border-color: rgba(184, 239, 53, 0.28);
   box-shadow: 0 24px 54px rgba(18, 18, 18, 0.1), 0 0 34px rgba(184, 239, 53, 0.12);
@@ -513,7 +515,8 @@ timeline-item p,
   overflow: hidden;
 }
 
-.service-card:hover .service-panel {
+.service-card:hover .service-panel,
+.service-card.is-open .service-panel {
   min-height: 286px;
   box-shadow: 0 28px 58px rgba(32, 25, 18, 0.12);
   transform: translateY(-12px);
@@ -575,7 +578,8 @@ timeline-item p,
 }
 
 .service-card:hover .service-details,
-.service-card:focus-within .service-details {
+.service-card:focus-within .service-details,
+.service-card.is-open .service-details {
   max-height: 180px;
   opacity: 1;
   margin-top: 14px;
@@ -893,12 +897,14 @@ timeline-item p,
   padding: 22px 24px;
   border: 0;
   background: transparent;
+  color: var(--text);
   font: inherit;
   text-align: left;
   cursor: pointer;
 }
 
 .faq-item button span:first-child {
+  color: var(--text);
   font-size: 1.05rem;
   font-weight: 700;
 }
@@ -937,6 +943,7 @@ timeline-item p,
 .faq-answer p {
   overflow: hidden;
   padding: 0 24px 0;
+  color: var(--muted);
 }
 
 .faq-item.active .faq-answer {
@@ -1443,6 +1450,11 @@ timeline-item p,
   }
 
   .service-card:hover .service-panel {
+    min-height: 270px;
+    transform: translateY(-8px);
+  }
+
+  .service-card.is-open .service-panel {
     min-height: 270px;
     transform: translateY(-8px);
   }
