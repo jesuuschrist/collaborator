@@ -3,6 +3,7 @@ const menuToggle = document.querySelector(".menu-toggle");
 const menuLinks = document.querySelectorAll(".menu a");
 const menuBackdrop = document.querySelector(".menu-backdrop");
 const faqItems = document.querySelectorAll(".faq-item");
+const legalItems = document.querySelectorAll(".legal-item");
 const serviceCards = document.querySelectorAll(".service-card");
 const reviewsGrid = document.querySelector(".reviews-grid");
 const reviewCards = document.querySelectorAll(".review-card");
@@ -74,6 +75,20 @@ faqItems.forEach((item) => {
     const isActive = item.classList.contains("active");
 
     faqItems.forEach((faqItem) => faqItem.classList.remove("active"));
+
+    if (!isActive) {
+      item.classList.add("active");
+    }
+  });
+});
+
+legalItems.forEach((item) => {
+  const button = item.querySelector("button");
+
+  button?.addEventListener("click", () => {
+    const isActive = item.classList.contains("active");
+
+    legalItems.forEach((legalItem) => legalItem.classList.remove("active"));
 
     if (!isActive) {
       item.classList.add("active");
