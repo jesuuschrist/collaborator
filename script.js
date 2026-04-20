@@ -1,6 +1,7 @@
 const topbar = document.querySelector(".topbar");
 const menuToggle = document.querySelector(".menu-toggle");
 const menuLinks = document.querySelectorAll(".menu a");
+const menuBackdrop = document.querySelector(".menu-backdrop");
 const faqItems = document.querySelectorAll(".faq-item");
 const serviceCards = document.querySelectorAll(".service-card");
 const reviewsGrid = document.querySelector(".reviews-grid");
@@ -19,16 +20,37 @@ const syncAnchorOffset = () => {
 };
 
 if (menuToggle && topbar) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = topbar.classList.toggle("menu-open");
+  const setMenuState = (isOpen) => {
+    topbar.classList.toggle("menu-open", isOpen);
+    document.body.classList.toggle("menu-active", isOpen);
     menuToggle.setAttribute("aria-expanded", String(isOpen));
+  };
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = !topbar.classList.contains("menu-open");
+    setMenuState(isOpen);
   });
 
   menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      topbar.classList.remove("menu-open");
-      menuToggle.setAttribute("aria-expanded", "false");
+      setMenuState(false);
     });
+  });
+
+  menuBackdrop?.addEventListener("click", () => {
+    setMenuState(false);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setMenuState(false);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) {
+      setMenuState(false);
+    }
   });
 }
 
